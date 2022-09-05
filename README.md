@@ -12,7 +12,7 @@ In the project root directory, run the following commands:
 
 ### `npm install`
 
-### 'cd ..'
+### `cd ..`
 
 ### `npm run dev`
 
