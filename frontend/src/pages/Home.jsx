@@ -1,21 +1,25 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Home() {
-  let navigate = useNavigate();
-  function HandleClick(e) {
-    e.preventDefault();
-    console.log('You clicked continue.')
-    navigate("/courses");
-  }
-
   return (
     <>
-      <h1>Home</h1>
-      <img className = "HeroPicture" src="../Images/Fern.jpeg" alt="Fern" width="300" height="900"></img>
-      <form onClick={HandleClick}>
-      <Link to="/courses"><button onClick={HandleClick}>Continue</button></Link>
-      </form>
+      <div className="page-content">
+        <div className="heading">
+          <p>
+            Kia ora!
+            <br />
+            Want to learn how to code?
+            <br />
+            You've come to the right place.
+          </p>
+        </div>
+
+        <Link to="/register">
+          <button className="btn btn-big">Get Started</button>
+        </Link>
+        <div>{/* promotional content here */}</div>
+      </div>
     </>
   );
 }
