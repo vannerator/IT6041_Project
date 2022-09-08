@@ -9,11 +9,12 @@
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
+  background-color: #d5f2cf;
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #03312e;
 }
 
 p {
@@ -33,6 +34,7 @@ h2,
 h3 {
   font-weight: 600;
   margin-bottom: 10px;
+  color: #03312e;
 }
 
 .container {
@@ -48,7 +50,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #03312e;
   margin-bottom: 60px;
 }
 
@@ -115,9 +117,9 @@ h3 {
 
 .btn {
   padding: 10px 20px;
-  border: 1px solid #000;
+  border: 1px solid #03312e;
   border-radius: 5px;
-  background: #000;
+  background: #03312e;
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -135,7 +137,7 @@ h3 {
 
 .btn-reverse {
   background: #fff;
-  color: #000;
+  color: #03312e;
 }
 
 .btn-block {
@@ -145,6 +147,29 @@ h3 {
 
 .btn:hover {
   transform: scale(0.98);
+}
+
+.btn-big {
+  padding: 20px 40px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.btn-module {
+  width: 400px;
+  height: 65px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .loadingSpinnerContainer {
@@ -164,7 +189,7 @@ h3 {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #000 transparent #555 transparent;
+  border-color: #03312e transparent #555 transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
