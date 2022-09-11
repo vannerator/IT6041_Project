@@ -1,8 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRightSquareFill } from "react-icons/bs";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Modules() {
+  const navigate = useNavigate();
+
+  const { user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
+
   return (
     <>
       <div className="page-content">
