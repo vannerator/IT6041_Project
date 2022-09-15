@@ -23,7 +23,7 @@ function Home() {
         <h3> Your progress is saved to your account</h3>
       </div>
 
-      <div> //buttons are ment to be alligned horizontally   
+      <div> //buttons are ment to be alligned horizontally 
         <Link to = "/register"> 
           <button className = "btn btn-big"> Register </button> 
         </Link>
