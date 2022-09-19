@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRightSquareFill } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -45,7 +45,8 @@ function Modules() {
           <button
             className={module2Unlocked ? "btn btn-unlocked" : "btn btn-locked"}
           >
-            Rua - Second Module &nbsp;&nbsp;&nbsp; <BsArrowRightSquareFill />
+            Rua - Loops &amp; Functions &nbsp;&nbsp;&nbsp;
+            <BsArrowRightSquareFill />
           </button>
         </Link>
         <Link
@@ -55,7 +56,8 @@ function Modules() {
           <button
             className={module3Unlocked ? "btn btn-unlocked" : "btn btn-locked"}
           >
-            Toru - Third Module &nbsp;&nbsp;&nbsp; <BsArrowRightSquareFill />
+            Toru - Classes &amp; Objects &nbsp;&nbsp;&nbsp;{" "}
+            <BsArrowRightSquareFill />
           </button>
         </Link>
       </div>
