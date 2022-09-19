@@ -6,8 +6,13 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Modules from "./pages/Modules";
+import Module1 from "./pages/Module1";
+import Module2 from "./pages/Module2";
+import { useSelector } from "react-redux";
 
 function App() {
+  const { user } = useSelector((state) => state.auth);
+
   return (
     <>
       <Router>
@@ -18,6 +23,8 @@ function App() {
             <Route path="/modules" element={<Modules />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/module1" element={<Module1 user={user} />} />
+            <Route path="/module2" element={<Module2 />} />
           </Routes>
         </div>
       </Router>
