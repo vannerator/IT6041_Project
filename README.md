@@ -1,5 +1,7 @@
 # IT6041_Project
 
+Project Name - Tikanga Waehere
+
 About....
 
 # Startup instructions:
@@ -21,3 +23,5 @@ this will simultaneously start the server on port 5000, and the client on port 3
 ## Created branch - Gerard:)
 
 ##Alia
+
+## Kishori
