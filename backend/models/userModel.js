@@ -15,6 +15,9 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Please provide a password"],
     },
+    progress: {
+      type: String,
+    },
   },
   {
     timestamps: true,

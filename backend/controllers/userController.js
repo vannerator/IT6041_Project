@@ -1,9 +1,9 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const asynchandler = require("express-async-handler");
+const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 
-const registerUser = asynchandler(async (req, res) => {
+const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
   if (!name || !email || !password) {
@@ -28,6 +28,7 @@ const registerUser = asynchandler(async (req, res) => {
     name,
     email,
     password: hashedPassword,
+    progress: "0",
   });
 
   if (user) {
@@ -36,6 +37,7 @@ const registerUser = asynchandler(async (req, res) => {
       name: user.name,
       email: user.email,
       token: generateToken(user._id),
+      progress: user.progress,
     });
   } else {
     res.status(400);
@@ -43,7 +45,7 @@ const registerUser = asynchandler(async (req, res) => {
   }
 });
 
-const loginUser = asynchandler(async (req, res) => {
+const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
   //Check for user email
@@ -55,6 +57,7 @@ const loginUser = asynchandler(async (req, res) => {
       name: user.name,
       email: user.email,
       token: generateToken(user._id),
+      progress: user.progress,
     });
   } else {
     res.status(400);
@@ -62,14 +65,49 @@ const loginUser = asynchandler(async (req, res) => {
   }
 });
 
-const getMe = asynchandler(async (req, res) => {
-  const { _id, name, email } = await User.findById(req.user.id);
+const getMe = asyncHandler(async (req, res) => {
+  const { _id, name, email, progress } = await User.findById(req.user.id);
 
   res.status(200).json({
     id: _id,
     name,
     email,
+    progress,
   });
+});
+
+// Update user progress
+const updateUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(401);
+    throw new Error("User not found");
+  }
+
+  const updatedUser = await User.findByIdAndUpdate(
+    req.params.id,
+    { progress: "1" },
+    {
+      new: true,
+    }
+  );
+
+  res.status(200).json(updatedUser);
+});
+
+// delete User
+const deleteUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status(400);
+    throw new Error("User not found");
+  }
+
+  await user.remove();
+
+  res.status(200).json({ id: req.params.id });
 });
 
 //Generate JWT
@@ -83,4 +121,6 @@ module.exports = {
   registerUser,
   loginUser,
   getMe,
+  updateUser,
+  deleteUser,
 };
