@@ -28,7 +28,7 @@ const registerUser = asyncHandler(async (req, res) => {
     name,
     email,
     password: hashedPassword,
-    progress: "0",
+    progress: 0,
   });
 
   if (user) {
@@ -87,7 +87,7 @@ const updateUser = asyncHandler(async (req, res) => {
 
   const updatedUser = await User.findByIdAndUpdate(
     req.params.id,
-    { progress: "1" },
+    { progress: user.progress + 1 },
     {
       new: true,
     }

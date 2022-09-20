@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../features/auth/authSlice";
 
-
 function Module1({ user }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -17,129 +16,117 @@ function Module1({ user }) {
   }, [user, navigate]);
 
   useEffect(() => {
-    dispatch(updateUser(user._id));
+    if (user.progress === 0) {
+      dispatch(updateUser(user._id));
+    }
   }, []);
 
   return (
     <>
       <div className="page-content">
         <h1> Tahi - Python Basics</h1>
-          <h2> Python Statement, Indentation, and Comments</h2>
-          <p>
-            In this lesson, you will learn about statements, indentation, and
-            comments.
-          </p>
-          
-          <br/> <br/>
-
-          <container maxWidth = "lg"
-        style = {{borderStyle: "solid", borderColor: "black", height: "100%", 
-        width: "90%"}}>
-        
-        <br/> 
-          
+        <h2> Python Statement, Indentation, and Comments</h2>
+        <p>
+          In this lesson, you will learn about statements, indentation, and
+          comments.
+        </p>
+        <br /> <br />
+        <container
+          maxWidth="lg"
+          style={{
+            borderStyle: "solid",
+            borderColor: "black",
+            height: "100%",
+            width: "90%",
+          }}
+        >
+          <br />
           <h2>Python Statement</h2>
-          
           <p>
             Statements are the instructions that a python interpreter uses to
             execute the code.
-            <br/>
+            <br />
             There are different types of statements such as an assignment
             statement,
-            <br/>
+            <br />
             if statement, for statement, and while statement. These will be
             discussed later.
           </p>
-          
-          <br/>
-          
+          <br />
           <h4> Example of a statement: </h4>
-          
           <h4> a = 1 + 2 + 3</h4>
-          
-          <br/> <br/>
-          
+          <br /> <br />
           <h3> Multi-Line statement</h3>
-
           <p>
             In Python, the end of a statement is marked by a newline character.
-            <br/>
+            <br />
             We can make a statement extend over multiple lines with the line
-            <br/>
+            <br />
             continuation character (\).
           </p>
-          
-          <br/>
-          
+          <br />
           <h4>Example of a multi-line statement:</h4>
-          
-          <h4>a = 1 + 2 + 3 + \
-            <br/> 4 + 5 + 6 + \
-            <br/> 7 + 8 + 9
+          <h4>
+            a = 1 + 2 + 3 + \
+            <br /> 4 + 5 + 6 + \
+            <br /> 7 + 8 + 9
           </h4>
-          
-          <br/> <br/>
-          
+          <br /> <br />
           <p>
             Line continuation is implied inside parentheses ( ), brackets [ ],
             and braces {}.
           </p>
-          
-          <br/>
-          
+          <br />
           <h4> Example of line continuation using parentheses ( ): </h4>
-          
-          <h4> a = (1 + 2 + 3 +
-            <br/> 4 + 5 + 6 +
-            <br/> 7 + 8 + 9)
+          <h4>
+            {" "}
+            a = (1 + 2 + 3 +
+            <br /> 4 + 5 + 6 +
+            <br /> 7 + 8 + 9)
           </h4>
-          
-          <br/>
-
+          <br />
           <h4> Example of line continuation using brackets [ ]: </h4>
-
-          <h4> colors = ['red',
-            <br/> 'blue',
-            <br/> 'Green'] 
-            <br/>
-            <br/>
+          <h4>
+            {" "}
+            colors = ['red',
+            <br /> 'blue',
+            <br /> 'Green']
+            <br />
+            <br />
             We can also put multiple statements in a single line using
             semicolons, as follows:
-            <br/>
-            a = 1; b = 2; c = 3 </h4>
-          
-          <br/> <br/> 
-
-          </container>
-
-          <br/> <br/> <br/>
-
-          <container maxWidth = "lg"
-        style = {{borderStyle: "solid", borderColor: "black", height: "100%", width: "90%"}}
+            <br />a = 1; b = 2; c = 3{" "}
+          </h4>
+          <br /> <br />
+        </container>
+        <br /> <br /> <br />
+        <container
+          maxWidth="lg"
+          style={{
+            borderStyle: "solid",
+            borderColor: "black",
+            height: "100%",
+            width: "90%",
+          }}
         >
-          <br/>
-
+          <br />
           <h2> Python Indentation</h2>
-
           <p>
             Indentation is used on code blocks (body of a function, loop, etc)
             at
-            <br/>
+            <br />
             the beginning of each code line and is very important in the Python
             language.
-            <br/>
+            <br />
             Indentation is the space at the beginning of each line of code.
-            <br/>
+            <br />
             Most programmers use 4 spaces, but it is your choice, as long as it
             has at
-            <br/>
+            <br />
             least 1 space and is consistent throughout the block.
           </p>
-
-          <br/>
-
+          <br />
           <h4> Example of indentation: </h4>
-          
           <h4>
             for i in range(1,11):
             <br /> print(i)
@@ -148,149 +135,113 @@ function Module1({ user }) {
             <br />
             Execute code
           </h4>
-          
-          <br/> <br/>
-
+          <br /> <br />
           <p>
             Indentation makes the code easier to read and looks neat and clean.
             This results in Python
-            <br/> programs that look similar and consistent.
-            <br/>
+            <br /> programs that look similar and consistent.
+            <br />
             Indentation can be ignored in line continuation, but it's always a
             good idea to indent.
           </p>
-
-          <br/>
-
+          <br />
           <h4> Example of indentation: </h4>
-          
           <h4>
             if True:
-            <br/> print('Kia Ora’)
-            <br/> a = 5
+            <br /> print('Kia Ora’)
+            <br /> a = 5
           </h4>
-
-          <br/>
-
+          <br />
           <h4> Example of no indentation: </h4>
           <h4> if True: print(‘Kia Ora’); a = 5 </h4>
-
-          <br/>
-
+          <br />
           <p>
             While they are both valid, the first example is more
             straightforward.
-            <br/>
+            <br />
             Incorrect indentation will result in IndentationError.
           </p>
-
-          <br/> <br/>
-
-          </container>
-
-          <br/> <br/> <br/>
-
-          <container maxWidth = "lg"
-        style = {{borderStyle: "solid", borderColor: "black", height: "100%", width: "90%"}}
+          <br /> <br />
+        </container>
+        <br /> <br /> <br />
+        <container
+          maxWidth="lg"
+          style={{
+            borderStyle: "solid",
+            borderColor: "black",
+            height: "100%",
+            width: "90%",
+          }}
         >
-          <br/>
-
+          <br />
           <h2> Python Comments </h2>
-
           <p>
             Comments explain the code inside a program, similar to in-code
             documentation.
           </p>
-
-          <br/>
-
+          <br />
           <h4>Example of commenting: </h4>
-          
           <h4>
             # call function main
             <br />
             main()
           </h4>
-          
-          <br/>
-
+          <br />
           <p>
             It helps the code be more readable, assists people unfamiliar with
             the project to understand
-            <br/>
+            <br />
             what is going on, and is a refresher to the original programmer,
             especially if it has been
-            <br/> some time since the code was written.
-            <br/>
+            <br /> some time since the code was written.
+            <br />
             Python Interpreter ignores comments.
           </p>
-
-          <br/>
-
+          <br />
           <h4> Example of a comment: </h4>
-          
           <h4>
             #This is a comment
-            <br/>
+            <br />
             print('Kia Ora, World!')
           </h4>
-
-          <br/>
-
+          <br />
           <p>
             A comment does not have to be text that explains the code, it can
             also be used to prevent
-            <br/>
+            <br />
             Python from executing code.
           </p>
-
-          <br/>
-
+          <br />
           <h4> Example of comment: </h4>
-          
           <h4>
             #print('Kia Ora, World!')
             <br />
             print('Ka Pai, Mate!')
           </h4>
-
-          <br/> <br/>
-
+          <br /> <br />
           <h3>Multi-line comments </h3>
-          
           <p>
             Comments can extend up to multiple lines. The hash(#) symbol is used
             at the beginning of each line.
           </p>
-
-          <br/>
-
+          <br />
           <h4>Example of multi-line comment: </h4>
-          
           <h4>
             #This is a comment
-            <br/>
+            <br />
             #written in
-            <br/>
+            <br />
             #more than just one line
-            <br/>
+            <br />
             print('Kia Ora, World!')
           </h4>
-
-          <br/> <br/>
-
+          <br /> <br />
         </container>
-
-        <br/> <br/>
-
+        <br /> <br />
         <h1> Test your knowledge and take the quiz</h1>
-
-        <br/>
-
+        <br />
         <button className="btn btn-big">Quiz</button>
-
-        <br/>
-
+        <br />
       </div>
     </>
   );

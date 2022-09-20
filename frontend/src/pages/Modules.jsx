@@ -21,10 +21,10 @@ function Modules() {
     }
   }, [user, navigate]);
 
-  if (user.progress === "1") {
+  if (user.progress === 1) {
     module2Unlocked = true;
   }
-  if (user.progress === "2") {
+  if (user.progress === 2) {
     module2Unlocked = true;
     module3Unlocked = true;
   }
@@ -45,7 +45,7 @@ function Modules() {
           <button
             className={module2Unlocked ? "btn btn-unlocked" : "btn btn-locked"}
           >
-            Rua - Loops &amp; Functions &nbsp;&nbsp;&nbsp;
+            Rua - Python Syntax &nbsp;&nbsp;&nbsp;
             <BsArrowRightSquareFill />
           </button>
         </Link>
