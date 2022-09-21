@@ -10,21 +10,19 @@ function Modules() {
 
   const { user } = useSelector((state) => state.auth);
 
-  var module2Unlocked = false;
-  var module3Unlocked = false;
-
   useEffect(() => {
     if (!user) {
       navigate("/login");
-    } else {
-      console.log(user.progress);
     }
   }, [user, navigate]);
 
-  if (user.progress === 1) {
+  var module2Unlocked = false;
+  var module3Unlocked = false;
+
+  if (user && user.progress === 1) {
     module2Unlocked = true;
   }
-  if (user.progress === 2) {
+  if (user && user.progress === 2) {
     module2Unlocked = true;
     module3Unlocked = true;
   }
@@ -56,10 +54,13 @@ function Modules() {
           <button
             className={module3Unlocked ? "btn btn-unlocked" : "btn btn-locked"}
           >
-            Toru - Classes &amp; Objects &nbsp;&nbsp;&nbsp;{" "}
+            Toru - Classes &amp; Objects &nbsp;&nbsp;&nbsp;
             <BsArrowRightSquareFill />
           </button>
         </Link>
+        <br />
+        <br />
+        <br />
       </div>
     </>
   );
