@@ -24,6 +24,7 @@ function Header() {
           Waehere
         </Link>
       </div>
+      <p>{user && `Kia ora ${user.name}!`}</p>
       <ul>
         {user ? (
           <li>

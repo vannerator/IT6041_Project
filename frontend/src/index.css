@@ -40,7 +40,7 @@ h3 {
 h4 {
   font-weight: 600;
   color: black;
-  background-color: white;
+  background-color: #e6e6e6;
   width: 100%;
   height: 100%;
   font-size: medium;
@@ -159,8 +159,11 @@ h4 {
 }
 
 .btn-reverse {
-  background: #e6e6e6;
-  color: #03312e;
+  background: #555;
+  color: whitesmoke;
+  padding: 20px 40px;
+  font-size: 2rem;
+  margin: 0 1rem 1rem;
 }
 
 .btn-block {
@@ -175,7 +178,7 @@ h4 {
 .btn-big {
   padding: 20px 40px;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin: 0 1rem 1rem;
 }
 
 .btn-unlocked {
@@ -229,6 +232,23 @@ h4 {
   border-color: #03312e transparent #555 transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
+}
+
+.content-box {
+  border: 3px solid #03312e;
+  border-radius: 12px;
+  width: 100%;
+  margin: 2rem 0;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 @keyframes spin {
