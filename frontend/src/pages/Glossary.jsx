@@ -48,8 +48,8 @@ function Glossary() {
 
           <br/> <br/> <br/>
 
-        <Link to="/home">
-          <button className="btn btn-big"> Home </button>
+        <Link to="/modules">
+          <button className="btn btn-big"> Modules </button>
         </Link>
 
         <br/> <br/> <br/>
