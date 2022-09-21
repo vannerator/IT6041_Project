@@ -5,7 +5,8 @@ function Home() {
   return (
     <>
       <div className="page-content">
-        <div className="heading">
+        <div className="heading">    
+        <img className="ImageEight" src="../Images/ImageEight.jpg" alt="Image" ></img>
           <p>
             Kia ora!
             <br />
@@ -14,6 +15,12 @@ function Home() {
             You've come to the right place.
           </p>
         </div>
+
+              {/* <div>
+        <img className = "promoPicture1" src = "..public/Images/SyntaxImage.png" alt = "SyntaxImage" width="200" height="300"> </img>
+        <img className = "promoPicture2" src = "..public/Images/PythonBasicsImage.png" alt = "PythonBasicsImage" width="200" height="300"> </img>
+        <img className = "promoPicture3" src = "..public/Images/HelloWorldImage.png" alt = "HelloWorldImage" width="200" height="300"> </img>
+      </div> */}
 
         <Link to="/register">
           <button className="btn btn-big">Get Started</button>
@@ -42,11 +49,7 @@ function Home() {
         </ul>
       </div>
 
-      {/* <div>
-        <img className = "promoPicture1" src = "..public/Images/SyntaxImage.png" alt = "SyntaxImage" width="200" height="300"> </img>
-        <img className = "promoPicture2" src = "..public/Images/PythonBasicsImage.png" alt = "PythonBasicsImage" width="200" height="300"> </img>
-        <img className = "promoPicture3" src = "..public/Images/HelloWorldImage.png" alt = "HelloWorldImage" width="200" height="300"> </img>
-      </div> */}
+
     </>
   );
 }

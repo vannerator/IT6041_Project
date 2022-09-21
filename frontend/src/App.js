@@ -18,6 +18,7 @@ function App() {
     <>
       <Router>
         <div className="container">
+          
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -28,6 +29,7 @@ function App() {
             <Route path="/module2" element={<Module2 user={user} />} />
             <Route path="/glossary" element={<Glossary />} />
           </Routes>
+
         </div>
       </Router>
       <ToastContainer />
