@@ -3,8 +3,13 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../features/auth/authSlice";
+import { Link } from "react-router-dom";
+import { BsArrowLeftSquareFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
-function Module2({ user }) {
+function Module2() {
+  const { user } = useSelector((state) => state.auth);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -16,11 +21,12 @@ function Module2({ user }) {
     }
   }, [user, navigate]);
 
-  useEffect(() => {
-    if (user.progress === 0) {
+  const onQuiz = () => {
+    if (user.progress === 1) {
       dispatch(updateUser(user._id));
     }
-  }, []);
+    navigate("/modules");
+  };
 
   const onNext = () => {
     if (contentCount < 2) {
@@ -90,7 +96,7 @@ function Module2({ user }) {
                 modules, classes, and other
                 <br />
                 objects in Python. They are case sensitive. Apples and apples
-                are examples of two different identifiers.{" "}
+                are examples of two different identifiers.
               </p>
               <br />
               <p>
@@ -101,7 +107,7 @@ function Module2({ user }) {
               <br />
               <p>
                 In addition, you cannot use Python keywords for naming
-                identifiers.{" "}
+                identifiers.
               </p>
               <br />
               <h3>Keywords</h3>
@@ -158,11 +164,19 @@ function Module2({ user }) {
               </button>
               <h1> Test your knowledge and take the quiz!</h1>
               <br />
-              <button className="btn btn-big">Quiz</button>
+              <button className="btn btn-big" onClick={onQuiz}>
+                Quiz
+              </button>
               <br />
             </>
           )}
         </div>
+        <Link to="/modules">
+          <button className="btn btn-big">
+            <BsArrowLeftSquareFill />
+            Menu
+          </button>
+        </Link>
       </div>
     </>
   );

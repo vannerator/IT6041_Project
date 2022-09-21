@@ -3,8 +3,13 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../features/auth/authSlice";
+import { Link } from "react-router-dom";
+import { BsArrowLeftSquareFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
-function Module1({ user }) {
+function Module1() {
+  const { user } = useSelector((state) => state.auth);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -16,11 +21,12 @@ function Module1({ user }) {
     }
   }, [user, navigate]);
 
-  useEffect(() => {
+  const onQuiz = () => {
     if (user.progress === 0) {
       dispatch(updateUser(user._id));
     }
-  }, []);
+    navigate("/modules");
+  };
 
   const onNext = () => {
     if (contentCount < 3) {
@@ -247,11 +253,19 @@ function Module1({ user }) {
               </button>
               <h1> Test your knowledge and take the quiz!</h1>
               <br />
-              <button className="btn btn-big">Quiz</button>
+              <button className="btn btn-big" onClick={onQuiz}>
+                Quiz
+              </button>
               <br />
             </>
           )}
         </div>
+        <Link to="/modules">
+          <button className="btn btn-big">
+            <BsArrowLeftSquareFill />
+            Menu
+          </button>
+        </Link>
       </div>
     </>
   );
