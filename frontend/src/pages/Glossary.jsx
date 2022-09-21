@@ -8,7 +8,7 @@ function Glossary() {
         <div className="heading">
             <h1> Glossary </h1>
           <p>
-            Maori terms translation
+            Maori terms translated
           </p>
         </div>
 
@@ -16,6 +16,10 @@ function Glossary() {
             <tr>
               <th>Term</th>
               <th>Description</th>
+            </tr>
+            <tr>
+              <td>Tikanga Waehere</td>
+              <td>The coding method</td>
             </tr>
             <tr>
               <td>Tahi</td>
@@ -30,48 +34,27 @@ function Glossary() {
               <td>Three</td>
             </tr>
             <tr>
-              <td>TO</td>
-              <td>BE</td>
+              <td>Kia Ora</td>
+              <td>Hello</td>
             </tr>
             <tr>
-              <td>CONTINUED</td>
-              <td>...</td>
-            </tr>
+              <td>Nau Mai, Haere Mai</td>
+              <td>Welcome, come</td>
+            </tr>            <tr>
+              <td>Ka Pai</td>
+              <td>It will be good</td>
+            </tr>         
           </table>
 
-                  <div className="heading">
-            <h1> Glossary </h1>
-          <p>
-            Python terms
-          </p>
-        </div>
-
-        <table>
-            <tr>
-              <th>Term</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>TO</td>
-              <td>BE</td>
-
-            </tr>
-            <tr>
-              <td>CONTINUED</td>
-              <td>...</td>
-            </tr>
-          </table>
-
+          <br/> <br/> <br/>
 
         <Link to="/home">
-          <button className="btn btn-big">Home</button>
+          <button className="btn btn-big"> Home </button>
         </Link>
-        <Link to="/back">
-          <p className="link">Back</p>
-        </Link>
+
+        <br/> <br/> <br/>
 
       </div>
-
     </>
   );
 }
