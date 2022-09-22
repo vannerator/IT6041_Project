@@ -8,6 +8,7 @@ function Home() {
     <>
       <div className="page-content">
         <div className="heading">
+
           <p>
             Kia ora!
             <br />
@@ -31,6 +32,11 @@ function Home() {
 
         <h1>Coding Made Simple!</h1>
         <ul className="home-list">
+        <img
+            className="ImageThree"
+            src="../Images/ImageThree.jpg"
+            alt="Image3"
+          ></img>
           <li>Kia Ora and Nau Mai Haere Mai</li>
           <li>
             Tikanga Waehere roughly translates as "the coding method", and this

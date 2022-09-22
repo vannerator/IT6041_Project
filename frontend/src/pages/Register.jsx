@@ -66,6 +66,11 @@ function Register() {
   return (
     <>
       <section className="heading">
+      <img
+            className="ImageTwo"
+            src="../Images/ImageTwo.jpg"
+            alt="Image2"
+          ></img>
         <h1>
           <FaUser /> Register
         </h1>
