@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Glossary() {
+  window.scrollTo(0, 0);
+
   return (
     <>
       <div className="page-content">

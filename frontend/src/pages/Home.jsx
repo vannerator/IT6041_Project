@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
+  window.scrollTo(0, 0);
+
   return (
     <>
       <div className="page-content">
@@ -16,7 +18,7 @@ function Home() {
           <img
             className="ImageEight"
             src="../Images/ImageEight.jpg"
-            alt="Image"
+            alt="Cartoon of a coder"
           ></img>
         </div>
 

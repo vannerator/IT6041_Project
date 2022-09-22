@@ -25,7 +25,7 @@ function Module2() {
     if (user.progress === 1) {
       dispatch(updateUser(user._id));
     }
-    navigate("/modules");
+    navigate("/quiz2");
   };
 
   const onNext = () => {
