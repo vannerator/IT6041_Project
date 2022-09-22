@@ -11,6 +11,8 @@ import Module1 from "./pages/Module1";
 import Module2 from "./pages/Module2";
 import Module3 from "./pages/Module3";
 import Glossary from "./pages/Glossary";
+import Privacy from "./pages/Privacy";
+
 import { useSelector } from "react-redux";
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
             <Route path="/module2" element={<Module2 />} />
             <Route path="/module3" element={<Module3 />} />
             <Route path="/glossary" element={<Glossary />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
           <Footer />
         </div>

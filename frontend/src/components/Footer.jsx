@@ -9,7 +9,7 @@ function Footer() {
           <Link to="/glossary">Glossary</Link>
         </li>
         <li>
-          <Link to="/">Privacy Policy</Link>
+          <Link to="/privacy">Privacy Policy</Link>
         </li>
       </ul>
     </header>
