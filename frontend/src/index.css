@@ -317,23 +317,23 @@ table {
 }
 
 .ImageTwo {
-  width: 400px;
-  height: 250px;
+  width: 600px;
+  height: 300px;
 }
 
 .ImageThree {
-  width: 400px;
-  height: 250px;
+  width: 600px;
+  height: auto;
 }
 
 .ImageFour {
-  width: 400px;
-  height: 250px;
+  width: 600px;
+  height: auto;
 }
 
 .ImageFive {
-  width: 400px;
-  height: 250px;
+  width: 600px;
+  height: 300px;
 }
 
 .ImageSix {
