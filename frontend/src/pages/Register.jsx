@@ -8,6 +8,8 @@ import { FaUser } from "react-icons/fa";
 import Spinner from "../components/Spinner";
 
 function Register() {
+  window.scrollTo(0, 0);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",

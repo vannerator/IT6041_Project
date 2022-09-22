@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function Modules() {
+  window.scrollTo(0, 0);
+
   const navigate = useNavigate();
 
   const { user } = useSelector((state) => state.auth);

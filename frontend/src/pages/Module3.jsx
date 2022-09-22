@@ -28,7 +28,7 @@ function Module3() {
           <img
             className="ImageEight"
             src="../Images/ImageEight.jpg"
-            alt="Image"
+            alt="Cartoon of a coder"
           ></img>
         </div>
         <Link to="/modules">
